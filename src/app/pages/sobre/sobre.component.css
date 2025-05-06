@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 85vh;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: var(--azul-principal);
+}
+
+p {
+    font-size: .9rem;
+    line-height: 20px;
+}

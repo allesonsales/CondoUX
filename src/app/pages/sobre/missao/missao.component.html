@@ -1,0 +1,27 @@
+<div class="containerT">
+    <div class="botoes">
+        <button (click)="setAtivo('missao')" [ngClass]="ativo === 'missao' ? 'ativo' : ''">Missão</button>
+        <button (click)="setAtivo('visao')" [ngClass]="ativo === 'visao' ? 'ativo' : ''">Visão</button>
+        <button (click)="setAtivo('valores')" [ngClass]="ativo === 'valores' ? 'ativo' : ''">Valores</button>
+    </div>
+    <div class="conteudo">
+        <div *ngIf="ativo === 'missao'" class="container">
+            <div class="image missao"></div>
+            <p>
+                Atender com excelência às necessidades dos condomínios, por meio da oferta de produtos e serviços que promovam uma gestão inteligente, segura e eficiente. Nosso compromisso é valorizar os espaços e contribuir para a qualidade de vida de todos os envolvidos.
+            </p>
+        </div>
+        <div *ngIf="ativo === 'visao'" class="container">
+            <div class="image visao"></div>
+            <p *ngIf="ativo === 'visao'">
+                Ser referência no setor de serviços, sendo reconhecida por clientes e colaboradores como a melhor escolha, pela qualidade dos produtos, excelência no atendimento e construção de relacionamentos sólidos, éticos e duradouros.
+            </p>
+        </div>
+        <div *ngIf="ativo === 'valores'" class="container">
+            <div class="image valores"></div>
+            <p *ngIf="ativo === 'valores'">  
+                Agimos com integridade, honestidade e convicção no que fazemos, sempre comprometidos com a valorização das pessoas e com a busca contínua por inovação, excelência e melhoria nos serviços prestados e nos relacionamentos que construímos.
+            </p>
+        </div>
+    </div>
+</div>

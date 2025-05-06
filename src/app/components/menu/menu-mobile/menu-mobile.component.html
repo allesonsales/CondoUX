@@ -1,0 +1,40 @@
+<nav>
+    <div class="menuTopo">
+        <i (click)="toggleMenu()" [ngClass]="menuAberto ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+        <div *ngIf="menuAberto" class="menuAberto">
+            <ul class="principal">
+                <li>
+                    <div (click)="toggleSubMenu('solucoes')" class="principalTitulo">
+                        <span>Soluções</span>
+                        <i class="seta" [ngClass]="abrirMenu === 'solucoes' ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                    </div>
+                    <div *ngIf="abrirMenu === 'solucoes'" class="subMenu">
+                        <a routerLink="/sobre" routerLinkActive="active-link">Pequenos porte</a>
+                    </div>
+                </li>
+                <li>
+                    <div (click)="toggleSubMenu('servicos')" class="principalTitulo">
+                        <span>Serviços</span>
+                        <i class="seta" [ngClass]="abrirMenu === 'servicos' ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                    </div>
+                    <ul *ngIf="abrirMenu === 'servicos'" class="subMenu">
+                        <li (click)="fecharMenu()">Controle de Acesso</li>
+                        <li (click)="fecharMenu()">Portaria Remota</li>
+                    </ul>
+                </li>
+                <li>
+                    <div (click)="toggleSubMenu('institucional')" class="principalTitulo">
+                        <span>Sobre</span>
+                        <i class="seta" [ngClass]="abrirMenu === 'institucional' ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></i>
+                    </div>
+                    <ul *ngIf="abrirMenu === 'institucional'" class="subMenu">
+                        <li>
+                            <a routerLink="/sobre" routerLinkActive="active-link">Institucional</a>
+                        </li>
+                        <li (click)="fecharMenu()">LGPD</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
