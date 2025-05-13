@@ -1,0 +1,18 @@
+<section id="correspondencia">
+  <div class="imagem" *ngFor="let item of imagens" class="imagens">
+    <img [src]="item.link" alt="" />
+  </div>
+  <h2>Gestão de Correspondência</h2>
+  <h3><b>Agilidade, controle</b> e <b>segurança</b> na palma da mão.</h3>
+  <p>
+    Nosso <b>software</b> garante uma <b>gestão eficiente</b> de entregas e
+    correspondências, com
+    <b>registros completos para proteger seu condomínio</b> e valorizar a
+    experiência do condômino.
+  </p>
+  <div class="contratar">
+    <button (click)="abrirModal()">Teste 7 dias grátis</button>
+  </div>
+  <app-lista-correspondencia></app-lista-correspondencia>
+  <app-modal></app-modal>
+</section>

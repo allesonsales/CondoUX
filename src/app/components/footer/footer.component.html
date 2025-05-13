@@ -1,4 +1,44 @@
 <footer>
-    <app-social></app-social>
-    <span>© Copyright {{ anoAtual }} CondoUX. Todos os direitos reservados.</span>
+  <div class="menu">
+    <div class="menuItem">
+      <span>Soluções</span>
+      <ul>
+        <li routerLink="solucoes/controledeacesso">Controle de Acesso</li>
+        <li routerLink="solucoes/correspondencia">
+          Gestão de<br />
+          Correspondência
+        </li>
+        <li routerLink="solucoes/cftv">CFTV</li>
+        <li routerLink="solucoes/semparar">Sem Parar</li>
+      </ul>
+    </div>
+    <div class="menuItem">
+      <span>Sobre</span>
+      <ul>
+        <li routerLink="sobre/institucional">Institucional</li>
+        <li routerLink="sobre/lgpd">LGPD</li>
+      </ul>
+    </div>
+    <div class="menuItem">
+      <span>Suporte</span>
+      <ul>
+        <li router>Central de Ajuda</li>
+        <li>Comercial</li>
+        <li>Financeiro</li>
+      </ul>
+    </div>
+    <div class="social">
+      <app-social></app-social>
+      <div class="endereco">
+        <span
+          >Open Mall The Square - Rod. Raposo Tavares, km 22 - Lageadinho -
+          Cotia - SP</span
+        >
+      </div>
+      <small
+        >© Copyright {{ anoAtual }} CondoUX. Todos os direitos
+        reservados.</small
+      >
+    </div>
+  </div>
 </footer>

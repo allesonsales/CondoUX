@@ -1,0 +1,81 @@
+.imagens {
+  width: 100%;
+  height: 450px;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.2)
+  );
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.15));
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 25px 25px 0 0;
+}
+
+h2 {
+  color: var(--azul-principal);
+  border-bottom: solid 1px var(--azul-linha);
+  font-size: 3rem;
+  line-height: 50px;
+  font-weight: 400;
+  margin-top: 2rem;
+}
+
+h3 {
+  color: var(--laranja-principal);
+  font-weight: 400;
+  font-size: 1.8rem;
+}
+
+p {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: var(--texto-sistema);
+  font-weight: 200;
+}
+
+.suporteContainer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.itensContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+i {
+  font-size: 2rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  border-radius: 15px;
+  color: white;
+  background-color: var(--azul-linha);
+  padding: 1rem;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+@media (min-width: 1024px) {
+  #suporte {
+    padding: 8rem;
+  }
+
+  .item:hover {
+    background-color: var(--azul-principal);
+  }
+}

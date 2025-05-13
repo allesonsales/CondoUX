@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-menu-mobile',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './menu-mobile.component.html',
-  styleUrl: './menu-mobile.component.css'
+  styleUrl: './menu-mobile.component.css',
 })
 export class MenuMobileComponent {
   menuAberto: boolean = false;
@@ -13,14 +15,16 @@ export class MenuMobileComponent {
 
   toggleMenu(): void {
     this.menuAberto = !this.menuAberto;
+    document.body.classList.add('no-scroll');
   }
 
   toggleSubMenu(menu: string): void {
-    this.abrirMenu = this.abrirMenu === menu ? null : menu
+    this.abrirMenu = this.abrirMenu === menu ? null : menu;
   }
 
   fecharMenu(): void {
-    this.menuAberto = false
+    this.menuAberto = false;
+    document.body.classList.remove('no-scroll');
   }
 
   logClicado(): void {

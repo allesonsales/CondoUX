@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="card" *ngFor="let item of funcionalidades">
+    <i class="bi" [ngClass]="item.icone"></i>
+    <div class="cardTitulo">
+      <h3>{{ item.nome }}</h3>
+      <span>{{ item.descricao }}</span>
+    </div>
+  </div>
+</div>

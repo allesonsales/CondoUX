@@ -1,0 +1,47 @@
+#inicio {
+  padding: 2rem;
+  height: 92vh;
+  margin-left: -2rem;
+  margin-top: -2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  gap: 1rem;
+  text-align: center;
+  background-color: rgb(238, 238, 238);
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--azul-principal);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  color: white;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 350;
+  color: var(--texto-sistema);
+}
+
+button {
+  padding: 0.8rem;
+  background-color: var(--azul-principal);
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+@media (min-width: 1024px) {
+  #inicio {
+    height: 100vh;
+  }
+}

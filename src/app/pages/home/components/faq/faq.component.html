@@ -1,0 +1,27 @@
+<section id="faq">
+  <h2>Dúvidas?</h2>
+  <p>
+    Tire suas dúvidas, e descubra tudo o que precisa saber para utilizar a
+    <b>CondoUX</b> agora:
+  </p>
+  <div class="containerPerguntas">
+    <div *ngFor="let item of perguntas; let i = index" class="container">
+      <div (click)="abrirResposta(i)" class="pergunta">
+        <span>{{ item.pergunta }}</span>
+        <i
+          class="bi"
+          [ngClass]="perguntaAberta === i ? 'bi-chevron-up' : 'bi-chevron-down'"
+        ></i>
+      </div>
+      <div *ngIf="perguntaAberta === i" class="resposta">
+        <p>{{ item.resposta }}</p>
+      </div>
+    </div>
+    <div class="bannerFinal">
+      <h3>Ainda tem dúvidas?</h3>
+      <div>
+        <button>Chamar no Whatsapp!</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,12 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+
+interface Beneficio {
+  titulo: string;
+  descricao: string;
+}
 
 @Component({
   selector: 'app-frases',
+  imports: [CommonModule],
   templateUrl: './frases.component.html',
-  styleUrls: ['./frases.component.css'], // <- Corrigido (era styleUrl)
+  styleUrls: ['./frases.component.css'],
 })
-export class FrasesComponent implements OnInit {
-  beneficios = [
+export class FrasesComponent implements OnInit, OnDestroy {
+  beneficios: Beneficio[] = [
     {
       titulo: 'Sistemas com Inteligência Artificial',
       descricao:
@@ -31,20 +38,20 @@ export class FrasesComponent implements OnInit {
         'Autorize entradas, visualize registros e receba notificações pelo celular.',
     },
   ];
-  beneficioAtual: { titulo: string; descricao: string } = {
-    titulo: '',
-    descricao: '',
-  };
 
   beneficiosAtualIndex = 0;
   beneficioAtual = this.beneficios[0];
+  private intervaloId: any;
 
   ngOnInit(): void {
-    setInterval(() => {
+    this.intervaloId = setInterval(() => {
       this.beneficiosAtualIndex =
         (this.beneficiosAtualIndex + 1) % this.beneficios.length;
       this.beneficioAtual = this.beneficios[this.beneficiosAtualIndex];
-      console.log(this.beneficioAtual);
     }, 2000);
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervaloId);
   }
 }

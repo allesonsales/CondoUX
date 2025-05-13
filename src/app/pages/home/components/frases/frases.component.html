@@ -1,2 +1,4 @@
-<h2>{{ beneficioAtual.titulo }}</h2>
-<p>{{ beneficioAtual.descricao }}</p>
+<div *ngIf="beneficioAtual">
+  <h2>{{ beneficioAtual.titulo }}</h2>
+  <p>{{ beneficioAtual.descricao }}</p>
+</div>

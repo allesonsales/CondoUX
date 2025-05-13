@@ -1,22 +1,35 @@
+#sobre {
+  margin-left: -2rem;
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .textContainer {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
 
 h2 {
-    margin-bottom: 1rem;
-    color: var(--azul-principal);
+  margin-bottom: 1rem;
+  color: var(--azul-principal);
+  font-size: 2.5rem;
+  border-bottom: solid 1px var(--azul-linha);
+  font-weight: 400;
 }
 
 p {
-    font-size: .9rem;
-    line-height: 20px;
+  font-size: 1.1rem;
+  font-weight: 350;
+  color: var(--texto-sistema);
+}
+
+@media (min-width: 1024px) {
+  #sobre {
+    padding: 6rem 8rem 0 8rem;
+  }
 }

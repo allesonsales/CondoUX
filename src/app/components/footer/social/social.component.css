@@ -1,12 +1,17 @@
 div {
-    display: flex;
-    gap: 1rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #F6AE2D;
-    align-self: flex-end;
+  display: flex;
+  gap: 2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #f6ae2d;
+  align-self: flex-end;
 }
 
-div i:hover {
-    transform: scale(1.1);
+a {
+  color: var(--laranja-principal);
+  transition: ease-in-out 0.3s;
+}
+
+a:hover {
+  transform: scale(1.1);
 }

@@ -1,0 +1,50 @@
+<ul class="perguntas">
+  <li>
+    <div (click)="switchFaq('lgpd')">
+      <span>O que é LGPD?</span>
+      <i
+        [ngClass]="faqAberto === 'lgpd' ? 'bi-chevron-up' : 'bi-chevron-down'"
+      ></i>
+    </div>
+    <p *ngIf="faqAberto === 'lgpd'">LGPD é a lei geral de Proteção de dados</p>
+  </li>
+  <li>
+    <div (click)="switchFaq('importante')">
+      <span>Por que a LGPD é importante?</span>
+      <i
+        [ngClass]="
+          faqAberto === 'importante' ? 'bi-chevron-up' : 'bi-chevron-down'
+        "
+      ></i>
+    </div>
+    <p *ngIf="faqAberto === 'importante'">
+      A LGPD vai além do cumprimento da lei, ela reforça o compromisso do seu
+      condomínio com a segurança, a privacidade e o respeito às pessoas. Em
+      sistemas de controle de acesso, proteger os dados de moradores e
+      visitantes transmite confiança, evita riscos legais e valoriza a imagem do
+      seu espaço como um ambiente moderno e responsável.
+    </p>
+  </li>
+  <li>
+    <div (click)="switchFaq('dados')">
+      <span>Quais dados são coletados?</span>
+      <i class="bi bi-chevron-down"></i>
+    </div>
+    <p *ngIf="faqAberto === 'dados'">
+      Coletamos dados pessoais, como nome, e-mail e telefone, para fornecer
+      nossos serviços.
+    </p>
+  </li>
+  <li>
+    <div (click)="switchFaq('coleta')">
+      <span>Por que coletamos?</span>
+      <i
+        [ngClass]="faqAberto === 'coleta' ? 'bi-chevron-up' : 'bi-chevron-down'"
+      ></i>
+    </div>
+    <p *ngIf="faqAberto === 'coleta'">
+      Coletamos dados para garantir a segurança e a eficiência dos nossos
+      serviços, além de melhorar a experiência do usuário.
+    </p>
+  </li>
+</ul>

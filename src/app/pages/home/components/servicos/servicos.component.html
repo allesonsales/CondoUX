@@ -1,0 +1,24 @@
+<section id="servicos">
+  <h2>Soluções que atendem a sua necessidade.</h2>
+  <p>
+    Na CondoUX, oferecemos serviços personalizados para atender às demandas do
+    seu condomínio.
+  </p>
+  <div class="container">
+    <div
+      class="card"
+      *ngFor="let servico of servicos"
+      [routerLink]="[servico.link]"
+    >
+      <i class="bi" [ngClass]="servico.icone"></i>
+      <h2>{{ servico.titulo }}</h2>
+      <p>{{ servico.descricao }}</p>
+      <ul>
+        <li *ngFor="let item of servico.lista">
+          {{ item }}
+        </li>
+      </ul>
+      <button class="button">Saiba mais...</button>
+    </div>
+  </div>
+</section>
