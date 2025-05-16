@@ -1,84 +1,95 @@
 <nav>
-  <div class="menuTopo">
-    <div class="menuAberto">
-      <ul class="principal">
-        <li>
-          <div class="principalTitulo">
-            <a routerLink="" (click)="fecharMenu()"><span>Home</span></a>
-          </div>
-        </li>
-        <li>
-          <div (mouseenter)="toggleSubMenu('solucoes')" class="principalTitulo">
-            <span>Soluções</span>
-            <i class="bi bi-chevron-down"></i>
-          </div>
-          <ul
-            *ngIf="abrirMenu === 'solucoes'"
-            class="subMenu"
-            (mouseleave)="fecharSubMenu()"
-          >
-            <li>
-              <a
-                routerLink="solucoes/controledeacesso"
-                routerLinkActive="router-link-active"
-                (click)="fecharMenu()"
-                >Controle de Acesso</a
-              >
-            </li>
-            <li>
-              <a
-                routerLink="solucoes/correspondencia"
-                routerLinkActive="router-link-active"
-                (click)="fecharMenu()"
-                >Gestão de Correspondência</a
-              >
-            </li>
-            <li>
-              <a routerLink="solucoes/cftv" (click)="fecharMenu()"
-                >Segurança CFTV</a
-              >
-            </li>
-            <li>
-              <a routerLink="solucoes/semparar">Sem Parar</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <div
-            (mouseenter)="toggleSubMenu('institucional')"
-            class="principalTitulo"
-          >
-            <span>Sobre</span>
-            <i class="bi bi-chevron-down"></i>
-          </div>
-          <ul
-            *ngIf="abrirMenu === 'institucional'"
-            class="subMenu"
-            (mouseleave)="fecharSubMenu()"
-          >
-            <li>
-              <a
-                routerLink="sobre/institucional"
-                routerLinkActive="router-link-active"
-                >Institucional</a
-              >
-            </li>
-            <li>
-              <a
-                routerLink="sobre/lgpd"
-                routerLinkActive="router-link-active"
-                (click)="fecharMenu()"
-                >LGPD</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li>
-          <div class="principalTitulo" (click)="fecharMenu()">
-            <a routerLink="/suporte"><span>Suporte</span></a>
-          </div>
-        </li>
-      </ul>
+  <div class="logo">
+    <img src="assets/condoux.png" alt="CondoUX - Seu Acesso em boas mãos" />
+  </div>
+  <div class="leftContainer">
+    <div class="teste">
+      <button (click)="abrirModal()">Teste grátis</button>
+    </div>
+    <div class="menuTopo">
+      <div class="menuAberto">
+        <ul class="principal">
+          <li>
+            <div class="principalTitulo">
+              <a routerLink="" (click)="fecharMenu()"><span>Home</span></a>
+            </div>
+          </li>
+          <li>
+            <div
+              (mouseenter)="toggleSubMenu('solucoes')"
+              class="principalTitulo"
+            >
+              <span>Soluções</span>
+              <i class="bi bi-chevron-down"></i>
+            </div>
+            <ul
+              *ngIf="abrirMenu === 'solucoes'"
+              class="subMenu animate__animated animate__fadeIn"
+              (mouseleave)="fecharSubMenu()"
+            >
+              <li>
+                <a
+                  routerLink="solucoes/controledeacesso"
+                  routerLinkActive="router-link-active"
+                  (click)="fecharMenu()"
+                  >Controle de Acesso</a
+                >
+              </li>
+              <li>
+                <a
+                  routerLink="solucoes/correspondencia"
+                  routerLinkActive="router-link-active"
+                  (click)="fecharMenu()"
+                  >Gestão de Correspondência</a
+                >
+              </li>
+              <li>
+                <a routerLink="solucoes/cftv" (click)="fecharMenu()"
+                  >Segurança CFTV</a
+                >
+              </li>
+              <li>
+                <a routerLink="solucoes/semparar">Sem Parar</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div
+              (mouseenter)="toggleSubMenu('institucional')"
+              class="principalTitulo"
+            >
+              <span>Sobre</span>
+              <i class="bi bi-chevron-down"></i>
+            </div>
+            <ul
+              *ngIf="abrirMenu === 'institucional'"
+              class="subMenu animate__animated animate__fadeIn"
+              (mouseleave)="fecharSubMenu()"
+            >
+              <li>
+                <a
+                  routerLink="sobre/institucional"
+                  routerLinkActive="router-link-active"
+                  >Institucional</a
+                >
+              </li>
+              <li>
+                <a
+                  routerLink="sobre/lgpd"
+                  routerLinkActive="router-link-active"
+                  (click)="fecharMenu()"
+                  >LGPD</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="principalTitulo" (click)="fecharMenu()">
+              <a routerLink="/suporte"><span>Suporte</span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>

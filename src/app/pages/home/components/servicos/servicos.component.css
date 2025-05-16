@@ -89,6 +89,7 @@ button {
     background-color: white;
     box-shadow: none;
     border: solid 1px var(--azul-linha);
+    transition: ease-in-out 0.3s;
   }
 
   .card h2 {
@@ -105,7 +106,7 @@ button {
 
   .card:hover {
     transform: scale(1.1);
-    transition: ease-in-out 0.3s;
+
     cursor: pointer;
   }
 

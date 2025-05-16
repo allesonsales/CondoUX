@@ -74,6 +74,10 @@ button {
     padding: 10rem;
   }
 
+  h2 {
+    margin-top: 2rem;
+  }
+
   button {
     width: 20%;
     cursor: pointer;

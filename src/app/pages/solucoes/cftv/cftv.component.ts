@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ListaCFTVComponent } from './components/lista/listacftv.component';
 import { CommonModule } from '@angular/common';
 

@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 90;
+  z-index: 999;
   background-color: rgba(0, 0, 0, 0.675);
   overflow: hidden;
 }
@@ -143,6 +143,36 @@ button {
 small {
   text-align: center;
   margin-bottom: 2rem;
+}
+
+.loading {
+  width: 15%;
+  height: 120px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  color: var(--laranja-principal);
+  padding: 2rem;
+  font-weight: 600;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--laranja-principal);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @media (min-width: 1024px) {

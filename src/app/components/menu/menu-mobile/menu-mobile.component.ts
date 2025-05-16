@@ -15,7 +15,11 @@ export class MenuMobileComponent {
 
   toggleMenu(): void {
     this.menuAberto = !this.menuAberto;
-    document.body.classList.add('no-scroll');
+    if (this.menuAberto) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
   }
 
   toggleSubMenu(menu: string): void {
@@ -25,9 +29,5 @@ export class MenuMobileComponent {
   fecharMenu(): void {
     this.menuAberto = false;
     document.body.classList.remove('no-scroll');
-  }
-
-  logClicado(): void {
-    console.log('clicou');
   }
 }

@@ -1,4 +1,4 @@
-// filepath: c:\Users\Alleson\Documents\CondoUX\CondoUX\src\main.ts
+import 'hammerjs';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { appConfig } from './app/app.config';

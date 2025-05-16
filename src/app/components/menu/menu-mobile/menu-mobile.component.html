@@ -1,11 +1,20 @@
 <nav>
+  <div class="logo">
+    <img
+      src="assets/condoux-logo.png"
+      alt="CondoUX - Seu Acesso em boas mãos"
+    />
+  </div>
   <div class="menuTopo">
     <i
       (click)="toggleMenu()"
       [ngClass]="menuAberto ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"
     ></i>
     <div *ngIf="menuAberto" class="menuAberto">
-      <ul class="principal">
+      <ul
+        class="principal animate__animated"
+        [ngClass]="menuAberto ? 'animate__slideInDown' : 'animate__slideOutUp'"
+      >
         <li>
           <div class="principalTitulo">
             <a routerLink="" (click)="fecharMenu()"><span>Home</span></a>
@@ -23,7 +32,10 @@
               "
             ></i>
           </div>
-          <ul *ngIf="abrirMenu === 'solucoes'" class="subMenu">
+          <ul
+            *ngIf="abrirMenu === 'solucoes'"
+            class="subMenu animate__animated animate__bounceIn"
+          >
             <li>
               <a
                 routerLink="solucoes/controledeacesso"
@@ -46,7 +58,9 @@
               >
             </li>
             <li>
-              <a routerLink="solucoes/semparar">Sem Parar</a>
+              <a routerLink="solucoes/semparar" (click)="fecharMenu()"
+                >Sem Parar</a
+              >
             </li>
           </ul>
         </li>
@@ -62,7 +76,15 @@
               "
             ></i>
           </div>
-          <ul *ngIf="abrirMenu === 'institucional'" class="subMenu">
+          <ul
+            *ngIf="abrirMenu === 'institucional'"
+            class="subMenu"
+            [ngClass]="
+              abrirMenu === 'institucional'
+                ? 'animate__bounceIn'
+                : 'animate__bounceOut'
+            "
+          >
             <li>
               <a
                 routerLink="sobre/institucional"

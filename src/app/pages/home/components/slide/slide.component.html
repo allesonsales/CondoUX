@@ -1,31 +1,20 @@
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="image1.jpg" class="d-block w-100" alt="Imagem 1" />
-    </div>
-    <div class="carousel-item">
-      <img src="image2.jpg" class="d-block w-100" alt="Imagem 2" />
-    </div>
-    <div class="carousel-item">
-      <img src="image3.jpg" class="d-block w-100" alt="Imagem 3" />
-    </div>
+<div class="slide">
+  <div class="titulo">
+    <h3>{{ fotos[indiceFoto].titulo }}</h3>
+    <span>{{ fotos[indiceFoto].frase }}</span>
   </div>
+  <div class="animate__animated imagens" [ngClass]="fadeClass">
+    <img
+      [src]="fotos[indiceFoto].link"
+      [alt]="fotos[indiceFoto].titulo"
+      (swipeleft)="proximo()"
+      (swiperight)="anterior()"
+    />
+  </div>
+  <button (click)="proximo()" class="bi bi-chevron-right" id="proximo"></button>
   <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselExample"
-    data-bs-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselExample"
-    data-bs-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+    (click)="anterior()"
+    class="bi bi-chevron-left"
+    id="anterior"
+  ></button>
 </div>

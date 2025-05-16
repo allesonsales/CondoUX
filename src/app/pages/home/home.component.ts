@@ -1,12 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FrasesComponent } from './components/frases/frases.component';
-import { SlideComponent } from './components/slide/slide.component';
+import { Component, OnInit } from '@angular/core';
 import { InterfaceComponent } from './components/interface/interface.component';
 import { ServicosComponent } from './components/servicos/servicos.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { FaqComponent } from './components/faq/faq.component';
+import { TopoComponent } from '../../components/topo/topo.component';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +15,7 @@ import { FaqComponent } from './components/faq/faq.component';
     InterfaceComponent,
     ServicosComponent,
     FaqComponent,
+    TopoComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

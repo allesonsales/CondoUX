@@ -1,9 +1,22 @@
 nav {
   display: flex;
-  padding: 2rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
   position: relative;
   box-shadow: -1px 7px 14px -5px rgba(0, 0, 0, 0.14);
-  z-index: 999;
+  z-index: 800;
+  width: 100vw;
+}
+
+.logo img {
+  height: 80px;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .principal {
@@ -62,6 +75,21 @@ i {
   font-size: 0.5rem;
 }
 
+.teste button {
+  background-color: var(--azul-principal);
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+  font-weight: 600;
+}
+
+.teste button:hover {
+  transform: scale(1.1);
+  color: var(--laranja-principal);
+}
 @media (max-width: 1023px) {
   nav {
     display: none;

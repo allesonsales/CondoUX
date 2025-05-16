@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ModalService } from '../../../modal.services';
 
 @Component({
   selector: 'app-menu-desktop',
@@ -9,6 +10,16 @@ import { RouterLink } from '@angular/router';
   styleUrl: './menu-desktop.component.css',
 })
 export class MenuDesktopComponent {
+  constructor(private modalService: ModalService) {}
+
+  abrirModal() {
+    this.modalService.openModal();
+  }
+
+  fecharModal() {
+    this.modalService.closeModal();
+  }
+
   menuAberto: boolean = false;
   abrirMenu: string | null = null;
 
