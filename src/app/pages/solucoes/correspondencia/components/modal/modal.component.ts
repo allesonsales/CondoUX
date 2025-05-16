@@ -7,7 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { ModalService } from '../../../../../modal.services';
-import { Subscription } from 'rxjs';
+import { firstValueFrom, Subscription } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { SucessoComponent } from './sucesso/sucesso.component';
@@ -142,19 +142,19 @@ export class ModalComponent implements OnInit, OnDestroy {
   mapearErro(status: number) {
     switch (status) {
       case 0:
-        return 'Não foi possível se conectar ao servidor. Verifique sua conexão com a internet.';
+        return `Erro ${status}: Não foi possível se conectar ao servidor. Verifique sua conexão com a internet.`;
       case 400:
-        return 'Dados inválidos. Verifique os campos e tente novamente.';
+        return `Erro ${status}: Dados inválidos. Verifique os campos e tente novamente.`;
       case 401:
-        return 'Você não tem autorização para executar essa ação.';
+        return `Erro ${status}: Você não tem autorização para executar essa ação.`;
       case 403:
-        return 'Acesso negado.';
+        return `Erro ${status}: Acesso negado.`;
       case 404:
-        return 'Recurso não encontrado.';
+        return `Erro ${status}: Recurso não encontrado.`;
       case 500:
-        return 'Erro interno no servidor. Tente novamente mais tarde.';
+        return `Erro ${status}: Erro interno no servidor. Tente novamente mais tarde.`;
       default:
-        return 'Erro inesperado. Tente novamente.';
+        return `Erro ${status}: Erro inesperado. Tente novamente.`;
     }
   }
 
@@ -171,9 +171,9 @@ export class ModalComponent implements OnInit, OnDestroy {
     this.loading = true;
 
     try {
-      await this.http
-        .post('http://192.168.15.10:32780/api/contato-site', this.form)
-        .toPromise();
+      await firstValueFrom(
+        this.http.post('http://192.168.15.11:32780/api/contato-site', this.form)
+      );
       this.abrirModalSucesso();
     } catch (erro: any) {
       this.mensagemErro = this.mapearErro(erro.status);
@@ -181,6 +181,10 @@ export class ModalComponent implements OnInit, OnDestroy {
       this.abrirModalErroInterno();
     } finally {
       this.loading = false;
+      this.form.cnpj = '';
+      this.form.email = '';
+      this.form.nome = '';
+      this.form.telefone = '';
     }
   }
 }

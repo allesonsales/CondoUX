@@ -52,7 +52,7 @@ option {
   gap: 2rem;
   border-radius: 15px;
   background-color: white;
-  padding: 1.5rem;
+  padding: 2rem;
   width: 90vw;
   position: relative;
 }
@@ -146,7 +146,7 @@ small {
 }
 
 .loading {
-  width: 15%;
+  width: 35%;
   height: 120px;
   background-color: white;
   display: flex;
@@ -175,6 +175,17 @@ small {
   }
 }
 
+@media (max-width: 667px) {
+  .container {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
 @media (min-width: 1024px) {
   .container {
     width: 40%;
@@ -183,5 +194,9 @@ small {
   button:hover {
     transform: scale(1.1);
     color: var(--laranja-principal);
+  }
+
+  .loading {
+    width: 15%;
   }
 }

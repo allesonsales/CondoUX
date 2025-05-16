@@ -40,8 +40,8 @@ p {
 }
 
 .erro {
-  width: 350px;
-  height: 350px;
+  width: 250px;
+  height: 250px;
 }
 
 .erro img {
@@ -52,5 +52,10 @@ p {
 @media (min-width: 1024px) {
   .modal {
     width: 30%;
+  }
+
+  .erro {
+    width: 350px;
+    height: 350px;
   }
 }

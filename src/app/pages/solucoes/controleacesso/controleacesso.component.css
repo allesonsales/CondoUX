@@ -53,6 +53,12 @@ p {
   justify-content: center;
 }
 
+a {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 button {
   padding: 0.8rem;
   background-color: var(--azul-principal);
