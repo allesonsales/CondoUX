@@ -12,11 +12,8 @@ export class TopoComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   trocarBotao() {
-    if (typeof window !== 'undefined') {
-      if (window.scrollY > 200) {
-        this.mostrarBotao = true;
-        console.log('mostrou', this.mostrarBotao, 'scroll', window.scrollY);
-      }
+    if (window.scrollY > 100) {
+      this.mostrarBotao = true;
     }
   }
 
@@ -24,5 +21,8 @@ export class TopoComponent implements OnInit {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('TopoComponent inicializado');
+    this.trocarBotao();
+  }
 }
